@@ -14,7 +14,7 @@ docker build -t my-paper-image .
 
 Run with:
 ```
-docker run -d --rm --name my-paper-server \
+docker run -p 25565:25565 -d --rm --name my-paper-server \
 -v /paper/install/dir:/paper \
 my-paper-image \
 <version> <build>
