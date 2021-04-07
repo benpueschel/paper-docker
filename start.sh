@@ -3,8 +3,8 @@
 # Enter server directory
 cd paper
 
-MC_VERSION=${1:latest}
-PAPER_BUILD=${2:latest}
+MC_VERSION=${1:-latest}
+PAPER_BUILD=${2:-latest}
 
 
 # Perform initial setup
