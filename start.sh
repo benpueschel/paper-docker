@@ -3,10 +3,10 @@
 # Enter server directory
 cd paper
 
-MC_VERSION=${1:-latest}
-PAPER_BUILD=${2:-latest}
-MC_RAM=${3:-1G}
-
+MC_VERSION=${MC_VERSION:-latest}
+PAPER_BUILD=${PAPER_BUILD:-latest}
+MIN_RAM=${MIN_RAM:-256M}
+MAX_RAM=${MAX_RAM:-1G}
 
 # Perform initial setup
 URL_PREFIX=https://papermc.io/api/v2/projects/paper
@@ -36,4 +36,4 @@ if [ ! -e ${JAR_NAME} ]
 fi
 
 # Start server
-exec java -server -Xms${MC_RAM} -Xmx${MC_RAM} ${JAVA_OPTS} -jar ${JAR_NAME} nogui
+exec java -server -Xms${MIN_RAM} -Xmx${MAX_RAM} ${JAVA_OPTS} -jar ${JAR_NAME} nogui
