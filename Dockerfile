@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt update \
-	&& apt install -y openjdk-17-jdk \
+	&& apt install -y openjdk-21-jdk \
 	&& apt install -y wget \
 	&& apt install -y jq \
 	&& rm -rf /var/lib/apt/lists/* \
