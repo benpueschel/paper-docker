@@ -3,6 +3,9 @@
 # Enter server directory
 cd paper
 
+# Accept EULA
+echo "eula=true" > eula.txt
+
 MC_VERSION=${MC_VERSION:-latest}
 PAPER_BUILD=${PAPER_BUILD:-latest}
 MIN_RAM=${MIN_RAM:-256M}
@@ -28,11 +31,6 @@ if [ ! -e ${JAR_NAME} ]
   then
     rm -f *.jar
     wget ${URL_PREFIX}/builds/${PAPER_BUILD}/downloads/paper-${MC_VERSION}-${PAPER_BUILD}.jar -O ${JAR_NAME}
-    if [ ! -e eula.txt ]
-    then
-      java -jar ${JAR_NAME}
-      sed -i 's/false/true/g' eula.txt
-    fi
 fi
 
 # Start server
