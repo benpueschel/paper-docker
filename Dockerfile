@@ -1,23 +1,21 @@
-FROM ubuntu:latest
+FROM alpine:latest
 
-RUN apt update \
-	&& apt install -y openjdk-21-jdk \
-	&& apt install -y wget \
-	&& apt install -y jq \
-	&& rm -rf /var/lib/apt/lists/*
+RUN apk update && \
+	apk add jq bash openjdk21-jre wget
 
 # Container setup
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
 
 # Create a non-priviliged user and set the working directory to their home
-RUN useradd -ms /bin/bash minecraft
+RUN adduser -D -S -h /home/minecraft minecraft
 WORKDIR /home/minecraft
 RUN mkdir paper
 RUN chown minecraft paper
 
 # Copy the start script and make it executable
 COPY start.sh ./
+RUN chown minecraft start.sh
 RUN chmod +x start.sh
 
 # Switch to the non-priviliged user
