@@ -16,7 +16,7 @@ docker build -t my-paper-image .
 Run with:
 ```sh
 docker run -p 25565:25565 -d --rm --name my-paper-server \
--v /paper/install/dir:/paper \
+-v /paper/install/dir:/home/minecraft/paper \
 my-paper-image
 ```
 
