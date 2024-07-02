@@ -12,7 +12,7 @@ The package is available on GitHub Container Registry as `ghcr.io/benpueschel/pa
 To automatically pull the image and run a container, use:
 ```sh
 docker run -p 25565:25565 -d --rm --name my-paper-server \
--v /paper/install/dir:/home/minecraft/paper \
+-v my-paper-volume:/home/minecraft/paper \
 ghcr.io/benpueschel/paper-docker:main
 ```
 
@@ -38,7 +38,7 @@ docker build -t my-paper-image .
 Finally, run the container with the custom image using:
 ```sh
 docker run -p 25565:25565 -d --rm --name my-paper-server \
--v /paper/install/dir:/home/minecraft/paper \
+-v my-paper-volume:/home/minecraft/paper \
 my-paper-image
 ```
 
