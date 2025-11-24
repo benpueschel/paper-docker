@@ -1,7 +1,7 @@
 # Paper Docker
 
 PaperMC in a docker container.
-PaperMC is a fork of the Minecraft Server API Spigot which aims to improve performance, 
+PaperMC is a fork of the Minecraft Server API Spigot which aims to improve performance,
 reduce memory usage and to simplify aswell as to improve the API usage.
 
 To find out more about Paper visit https://papermc.io/ or https://github.com/PaperMC/Paper
@@ -21,7 +21,7 @@ Container uses the following environment variables:
 - `PAPER_BUILD`: target build. defaults to `latest`
 - `MIN_RAM`: jvm min heap size (-Xms). Defaults to `256M`
 - `MAX_RAM`: jvm max heap size (-Xmx). Defaults to `1G`
-- `JAVA_OPTS`: extra options to be passed to the jvm. optional
+- `JAVA_OPTS`: extra options to be passed to the jvm. Defaults to [Paper's recommended flags](https://docs.papermc.io/paper/aikars-flags/).
 
 ## Manual Build
 
