@@ -1,7 +1,8 @@
 FROM alpine:latest
 
 RUN apk update && \
-	apk add jq bash openjdk21-jre wget
+	apk add jq bash openjdk21-jre wget && \
+	apk add gettext
 
 # Container setup
 EXPOSE 25565/tcp
