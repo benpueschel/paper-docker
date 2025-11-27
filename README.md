@@ -8,12 +8,12 @@ To find out more about Paper visit https://papermc.io/ or https://github.com/Pap
 
 ## Quick Start
 
-The package is available on GitHub Container Registry as `ghcr.io/benpueschel/paper-docker:main`.
+The package is available on Docker Hub as `benpueschel/paper` and on the GitHub Container Registry as `ghcr.io/benpueschel/paper-docker`.
 To automatically pull the image and run a container, use:
 ```sh
 docker run -p 25565:25565 -d --rm --name my-paper-server \
 -v my-paper-volume:/home/minecraft/paper \
-ghcr.io/benpueschel/paper-docker:main
+benpueschel/paper
 ```
 
 Container uses the following environment variables:
