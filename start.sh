@@ -38,10 +38,11 @@ if [ ! -e ${JAR_NAME} ]
     wget ${DOWNLOAD_URL} -O ${JAR_NAME}
 fi
 
-[ $# -gt 0 ] && sh -c "$1" _ "$@"
-
-if [ $? -ne 0 ]; then
-	exit $?
+if [ $# -gt 0 ]; then
+	sh -c "$1" _ "$@"
+	if [ $? -ne 0 ]; then
+		exit $?
+	fi
 fi
 
 # Start server
